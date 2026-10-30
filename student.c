@@ -1,22 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
+int main()
 {
-    int *p;
-    int i;
+    int *p, i;
 
-    p = calloc(5, sizeof(int));
+    p = (int *)malloc(3 * sizeof(int));
 
     if (p == NULL)
     {
-        printf("Memory allocation failed\n");
+        printf("Memory allocation failed");
         return 1;
     }
 
-    printf("Initial value:\n");
+    printf("Enter 3 numbers:\n");
 
-    for (i = 0; i < 5; i++)
+    for (i = 0; i < 3; i++)
+    {
+        scanf("%d", &p[i]);
+    }
+
+    printf("The numbers are:\n");
+
+    for (i = 0; i < 3; i++)
     {
         printf("%d ", p[i]);
     }
